@@ -1,90 +1,151 @@
-Laravel CRUD Data Film Sederhana
+# Laravel CRUD Data Film
 
-Aplikasi CRUD sederhana menggunakan Laravel 12 untuk mengelola data film, lengkap dengan upload poster, dan tampilan tabel.
+Aplikasi CRUD sederhana berbasis Laravel 12 untuk mengelola data film.
+Mendukung fitur tambah, tampil, edit, hapus data, serta upload poster.
 
-Fitur Utama
-Create (Tambah data film)
-Read (Tampilkan data film)
-Update (Edit data film)
-Delete (Hapus data film)
-Upload gambar/poster film
-Tampilan tabel sederhana
+---
 
+## Deskripsi
 
-Teknologi yang Digunakan
-Laravel 12
-PHP >= 8.3
-MySQL
+Project ini dibuat untuk pembelajaran dasar Laravel, khususnya implementasi CRUD (Create, Read, Update, Delete) dengan database MySQL.
 
+---
 
+## Fitur
 
-Cara Instalasi
-1.Clone Repository
+* Menambahkan data film
+* Menampilkan data film dalam tabel
+* Mengedit data film
+* Menghapus data film
+* Upload poster film
+* Notifikasi setelah aksi berhasil
+
+---
+
+## Teknologi
+
+* Laravel 12
+* PHP >= 8.3
+* MySQL
+* Blade Template
+
+---
+
+## Instalasi
+
+1. Clone repository
+
+```
 git clone https://github.com/tqikhsan-wq/Laravel-Crud-Data-Film-Sederhana.git
 cd Laravel-Crud-Data-Film-Sederhana
-2.Install Dependency
+```
+
+2. Install dependency
+
+```
 composer install
-3.Copy File Environment
+```
+
+3. Copy file environment
+
+```
 cp .env.example .env
-4.Konfigurasi Database
+```
 
-Buka file .env, lalu ubah:
+4. Konfigurasi database pada file `.env`
 
-DB_DATABASE=crud_film
+```
+DB_DATABASE=film_db
 DB_USERNAME=root
 DB_PASSWORD=
+```
 
+Pastikan database `film_db` sudah dibuat di MySQL.
 
-Buat database di MySQL dengan nama:
-crud_film
-5. Generate Key
+5. Generate application key
+
+```
 php artisan key:generate
-6. Migrasi Database
+```
+
+6. Jalankan migrasi database
+
+```
 php artisan migrate
-7. Storage Link
+```
+
+7. Buat symbolic link untuk storage
+
+```
 php artisan storage:link
-8. Jalankan Server
+```
+
+8. Jalankan aplikasi
+
+```
 php artisan serve
+```
 
-Buka di browser:
+Akses di browser:
 
+```
 http://127.0.0.1:8000
+```
 
-Struktur Database
+---
 
-Tabel films memiliki kolom
+## Struktur Folder
 
-id
-judul
-genre
-tahun_rilis
-sutradara
-negara
-durasi
-rating
-deskripsi
-poster
+* app/Models/Film.php
+* app/Http/Controllers/FilmController.php
+* resources/views/films/
+* database/migrations/
 
-Struktur Folder Penting
-app/Models/Film.php → Model Film
-app/Http/Controllers/FilmController.php → Controller CRUD
-resources/views/films/ → View (index, create, edit, show)
-database/migrations/ → Struktur tabel database
+---
 
+## Struktur Tabel
 
-Alur CRUD
-Create → Tambah data film melalui form
-Read → Menampilkan data dalam tabel
-Update → Edit data film
-Delete → Hapus data film
+Tabel `films` memiliki kolom:
 
+* id
+* judul
+* genre
+* tahun_rilis
+* sutradara
+* negara
+* durasi
+* rating
+* deskripsi
+* poster
+* timestamps
 
-Upload Gambar
-Gambar disimpan di:
+---
+
+## Upload Gambar
+
+File disimpan di:
+
+```
 storage/app/public/posters
-Ditampilkan dengan:
+```
+
+Ditampilkan di view dengan:
+
+```
 <img src="{{ asset('storage/' . $film->poster) }}">
+```
 
+---
 
-Pastikan ada php artisan storage:link
+## Catatan
 
+* Jangan upload file `.env` ke repository
+* Pastikan menjalankan `php artisan storage:link`
+* Gunakan `multipart/form-data` untuk form upload
+* Pastikan database sudah tersedia sebelum migrate
+
+---
+
+## Tujuan
+
+Project ini dibuat untuk pembelajaran dasar Laravel CRUD dan dapat digunakan sebagai referensi awal atau portfolio sederhana.
