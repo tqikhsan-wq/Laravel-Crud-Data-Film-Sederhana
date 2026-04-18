@@ -34,6 +34,7 @@ DB_DATABASE=crud_film
 DB_USERNAME=root
 DB_PASSWORD=
 
+
 Buat database di MySQL dengan nama:
 crud_film
 5. Generate Key
