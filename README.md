@@ -16,6 +16,8 @@ Laravel 12
 PHP >= 8.3
 MySQL
 
+
+
 Cara Instalasi
 1.Clone Repository
 git clone https://github.com/tqikhsan-wq/Laravel-Crud-Data-Film-Sederhana.git
