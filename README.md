@@ -1,4 +1,4 @@
-Laravel CRUD Data Film
+Laravel CRUD Data Film Sederhana
 
 Aplikasi CRUD sederhana menggunakan Laravel 12 untuk mengelola data film, lengkap dengan upload poster, dan tampilan tabel.
 
@@ -17,29 +17,28 @@ PHP >= 8.3
 MySQL
 
 Cara Instalasi
-1. Clone Repository
+1.Clone Repository
 git clone https://github.com/tqikhsan-wq/Laravel-Crud-Data-Film-Sederhana.git
 cd Laravel-Crud-Data-Film-Sederhana
-2. Install Dependency
+2.Install Dependency
 composer install
-3. Copy File Environment
+3.Copy File Environment
 cp .env.example .env
-4. Konfigurasi Database
+4.Konfigurasi Database
 
 Buka file .env, lalu ubah:
 
-DB_DATABASE=film_db
+DB_DATABASE=crud_film
 DB_USERNAME=root
 DB_PASSWORD=
 
 Buat database di MySQL dengan nama:
-
-film_db
+crud_film
 5. Generate Key
 php artisan key:generate
 6. Migrasi Database
 php artisan migrate
-7. Storage Link (WAJIB untuk gambar)
+7. Storage Link
 php artisan storage:link
 8. Jalankan Server
 php artisan serve
@@ -75,17 +74,14 @@ Create → Tambah data film melalui form
 Read → Menampilkan data dalam tabel
 Update → Edit data film
 Delete → Hapus data film
-🖼️ Upload Gambar
 
+
+Upload Gambar
 Gambar disimpan di:
-
 storage/app/public/posters
-
 Ditampilkan dengan:
-
 <img src="{{ asset('storage/' . $film->poster) }}">
 
-Pastikan:
 
-php artisan storage:link
+Pastikan ada php artisan storage:link
 
