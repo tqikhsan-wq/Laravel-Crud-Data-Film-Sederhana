@@ -55,12 +55,12 @@ cp .env.example .env
 4. Konfigurasi database pada file `.env`
 
 ```
-DB_DATABASE=film_db
+DB_DATABASE=crud_datafilm
 DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-Pastikan database `film_db` sudah dibuat di MySQL.
+Pastikan database `crud_datafilm` sudah dibuat di MySQL.
 
 5. Generate application key
 
@@ -146,6 +146,4 @@ Ditampilkan di view dengan:
 
 ---
 
-## Tujuan
 
-Project ini dibuat untuk pembelajaran dasar Laravel CRUD dan dapat digunakan sebagai referensi awal atau portfolio sederhana.
